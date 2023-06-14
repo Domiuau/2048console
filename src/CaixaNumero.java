@@ -1,6 +1,6 @@
 public class CaixaNumero {
 
-    //Número que aparecerá em deterimnado espaço na matriz
+    //Número que aparecerá em determinado espaço na matriz
     private int numero = 0;
 
     //Se o espaço pode ser somado na rodada ou não
@@ -22,7 +22,8 @@ public class CaixaNumero {
      *
      */
     public String getNumeroFormatado() {
-        return numero < 10 ? "  " + numero + "  " : numero < 100 ? "  " + numero + " " : numero < 1000 ? " " + numero + " " : numero < 10000 ? " " + numero + "": "" + numero + "";
+        return numero < 10 ? "  " + numero + "  " : numero < 100 ? "  " + numero + " " :
+                numero < 1000 ? " " + numero + " " : numero < 10000 ? " " + numero + "": "" + numero + "";
     }
 
     /**
@@ -31,7 +32,7 @@ public class CaixaNumero {
      */
     public String getCor() {
 
-        //as dezenas 30 e 90 retornam uma cores diferente quando suas unidades são mudadas
+        //As dezenas 30 e 90 retornam cores diferentes quando suas unidades são mudadas
 
         for (int i = 1; i < 8; i++) {
 
@@ -48,9 +49,7 @@ public class CaixaNumero {
 
         return "00";
 
-
     }
-
 
     public void setNumero(int numero) {
         this.numero = numero;
@@ -62,10 +61,10 @@ public class CaixaNumero {
      */
     @Override
     public String toString() {
-        return "\u001B[" + getCor() + "m┌─────┐" +
+         return "\u001B[" + getCor() + "m┌─────┐" +
                 "\u001B[" + getCor() + "m│" + getNumeroFormatado() + "│" +
                 "\u001B[" + getCor() + "m└─────┘";
-
+        //Esse "getNumeroFormatado()" retorna um número para pegar uma cor de acordo com a seguinte tabela:
 
     }
 
